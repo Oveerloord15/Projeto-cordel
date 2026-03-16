@@ -1,0 +1,235 @@
+@charset "UTF-8"; 
+/* Define a codificação do arquivo como UTF-8.
+   Isso permite usar caracteres especiais como ç, ã, é sem dar erro no navegador. */
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap'); 
+/* Importa do Google Fonts a fonte chamada "Passion One".
+   O código também pede três espessuras (peso) da fonte: 400, 700 e 900.
+   Assim o site pode usar variações de texto normal, negrito e super negrito. */
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap'); 
+/* Importa outra fonte do Google Fonts chamada "Sriracha".
+   Ela será usada principalmente para textos estilizados no site. */
+
+:root { 
+/* :root representa o elemento raiz da página (o html).
+   Ele é muito usado para declarar variáveis globais do CSS,
+   que poderão ser usadas em qualquer parte do código. */
+
+    --fonte1: verdana, geneva, tahoma, sans-serif; 
+    /* Cria uma variável chamada --fonte1.
+       Ela guarda uma lista de fontes seguras do sistema.
+       Se uma não existir no computador, o navegador tenta a próxima. */
+
+    --fonte2: 'Passion One', cursive; 
+    /* Cria a variável --fonte2 usando a fonte Passion One que foi importada.
+       Se por algum motivo ela não carregar, o navegador usa uma fonte cursiva. */
+
+    --fonte3: "Sriracha", cursive; 
+    /* Cria a variável --fonte3 usando a fonte Sriracha importada do Google Fonts. */
+
+}
+
+* { 
+/* O seletor * significa "todos os elementos da página".
+   Esse bloco é chamado de RESET de CSS. */
+
+    margin: 0px; 
+    /* Remove todas as margens padrão que os navegadores colocam automaticamente
+       em elementos como h1, p, body etc. */
+
+    padding: 0px; 
+    /* Remove todos os espaçamentos internos padrão dos elementos. */
+
+}
+
+html, body { 
+/* Aplica estilos ao elemento html e ao body da página. */
+
+    min-height: 100vh; 
+    /* Define que a altura mínima da página deve ser 100% da altura da tela.
+       vh significa "viewport height", ou seja, altura da janela do navegador. */
+
+    background-color: beige; 
+    /* Define a cor de fundo geral da página como bege. */
+
+    font-family: var(--fonte1); 
+    /* Define a fonte padrão do site usando a variável --fonte1. */
+
+}
+
+header { 
+/* Seleciona o elemento <header> da página. */
+
+    background-color: black; 
+    /* Define o fundo do cabeçalho como preto. */
+
+    color: white; 
+    /* Define a cor padrão do texto dentro do header como branco. */
+
+    text-align: center; 
+    /* Centraliza horizontalmente todo o texto dentro do header. */
+
+}
+
+header > h1 { 
+/* Seleciona apenas o h1 que é filho direto do header. */
+
+    padding-top: 50px; 
+    /* Cria um espaço de 50px acima do título. */
+
+    font-variant: small-caps; 
+    /* Converte letras minúsculas em pequenas letras maiúsculas. */
+
+    font-family: var(--fonte2); 
+    /* Define que o título usará a fonte Passion One. */
+
+    font-size: 05vw; 
+    /* Define o tamanho do texto baseado na largura da tela.
+       vw significa viewport width (largura da tela).
+       Isso deixa o texto responsivo. */
+
+}
+
+header > p { 
+/* Seleciona o parágrafo dentro do header. */
+
+    padding-bottom: 50px; 
+    /* Adiciona espaço abaixo do parágrafo. */
+
+}
+
+header a, footer a { 
+/* Seleciona todos os links dentro do header e também do footer. */
+
+    color: white; 
+    /* Define a cor do link como branca. */
+
+    text-decoration: none; 
+    /* Remove o sublinhado padrão dos links. */
+
+    font-weight: bolder; 
+    /* Deixa o texto do link mais grosso (negrito forte). */
+
+}
+
+header a:hover, footer a:hover { 
+/* Aplica estilo quando o usuário passa o mouse sobre o link. */
+
+    text-decoration: underline; 
+    /* Mostra o sublinhado quando o mouse passa sobre o link. */
+
+}
+
+section { 
+/* Seleciona todos os elementos <section> da página. */
+
+    padding-top: 10vh; 
+    /* Espaçamento acima da section equivalente a 10% da altura da tela. */
+
+    padding-bottom: 10vh; 
+    /* Espaçamento abaixo da section equivalente a 10% da altura da tela. */
+
+    line-height: 2em; 
+    /* Define a altura das linhas do texto (melhora a leitura). */
+
+    padding-left: 30px; 
+    /* Adiciona 30px de espaço à esquerda do conteúdo. */
+
+    font-family: var(--fonte3); 
+    /* Define que o texto da section usará a fonte Sriracha. */
+
+    font-size: 3vw; 
+    /* Tamanho do texto proporcional à largura da tela. */
+
+}
+
+section.normal { 
+/* Seleciona uma section que possui a classe "normal". */
+
+    color: black; 
+    /* Define o texto como preto. */
+
+    background-color: white; 
+    /* Define o fundo da section como branco. */
+
+}
+
+section > p { 
+/* Seleciona os parágrafos dentro das sections. */
+
+    padding-bottom: 1em; 
+    /* Cria um pequeno espaço abaixo de cada parágrafo. */
+
+}
+
+section.imagem { 
+/* Seleciona uma section com a classe "imagem". */
+
+    background-color: rgba(8, 8, 8, 0.459); 
+    /* Define um fundo preto com transparência usando RGBA. */
+
+    color: white; 
+    /* Define o texto como branco. */
+    
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.281);
+    /* Cria uma sombra interna na section para dar efeito de profundidade. */
+
+    background-attachment: fixed;
+    /* Faz o fundo ficar fixo enquanto a página rola.
+       Isso cria um efeito visual chamado "parallax". */
+
+}
+
+section.imagem > p { 
+/* Seleciona os parágrafos dentro de uma section com classe imagem. */
+
+    display: inline-block; 
+    /* Faz o parágrafo ocupar apenas o espaço necessário do texto. */
+
+    padding: 6px; 
+    /* Cria um pequeno espaço interno ao redor do texto. */
+
+    background-color: rgba(7, 7, 7, 0.212); 
+    /* Fundo escuro transparente para melhorar a leitura do texto. */
+
+    text-shadow: 2px 2px 0px black;
+    /* Cria uma sombra no texto para destacá-lo sobre a imagem. */
+
+}
+
+section#img01 {
+    background-image: url(../imagens/background001.jpg);
+    /* Define uma imagem de fundo para a section com id img01. */
+
+    background-position: right center;
+    /* Posiciona a imagem mais para a direita e centralizada verticalmente. */
+
+    background-size: cover;
+    /* Faz a imagem cobrir toda a área da section sem distorcer. */
+}
+
+section#img02 {
+    background-image: url(../imagens/background002.jpg);
+    /* Define outra imagem de fundo para a section com id img02. */
+
+    background-size: cover;
+    /* Faz a imagem ocupar toda a área da section. */
+}
+
+footer { 
+/* Seleciona o elemento <footer> da página. */
+
+    text-align: center; 
+    /* Centraliza o texto do rodapé. */
+
+    color: white; 
+    /* Define a cor do texto como branca. */
+
+    background-color: black; 
+    /* Define o fundo do rodapé como preto. */
+
+    padding: 10px; 
+    /* Adiciona espaço interno para o conteúdo não ficar colado nas bordas. */
+
+}
